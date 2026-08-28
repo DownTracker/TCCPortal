@@ -49,7 +49,7 @@
             <label class="field-label">Student ID number</label>
             <div class="field">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E9BD7" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
-              <input type="text" placeholder="2023-5104" />
+              <input type="text" placeholder="2024-00123" />
             </div>
 
             <label class="field-label">Password</label>
@@ -205,6 +205,148 @@
             </div>
           </li>
         </ol>
+
+        <button id="view-schedule-btn" class="btn btn-gold">
+          View class schedule
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A2E06" stroke-width="2"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ================= CLASS SCHEDULE SCREEN ================= -->
+    <section id="screen-schedule" class="screen">
+      <div class="doc-card doc-card-wide">
+        <button class="back-btn" data-back="enrollment">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1E9BD7" stroke-width="2"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg>
+          Back to enrollment steps
+        </button>
+
+        <div class="doc-header">
+          <img src="logo.png" alt="Talisay City College seal" class="doc-logo" />
+          <div>
+            <p class="doc-eyebrow">Talisay City College</p>
+            <h2 class="heading">Class schedule</h2>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="info-label">Program</span>
+            <span class="info-value">BSIndTech &ndash; Computer Technology</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Year level</span>
+            <span class="info-value">4th Year</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Section</span>
+            <span class="info-value">Fidelity</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Days</span>
+            <span class="info-value">Tue &middot; Thu &middot; Sat</span>
+          </div>
+        </div>
+
+        <p class="section-label">Summary of subject loads</p>
+        <table class="subject-table">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Descriptive title</th>
+              <th class="num">Units</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>IM 414</td>
+              <td>Shop Supervision and Apprenticeship Training</td>
+              <td class="num">3</td>
+            </tr>
+            <tr>
+              <td>IM 415</td>
+              <td>Industrial Organization and Personnel Management</td>
+              <td class="num">3</td>
+            </tr>
+            <tr>
+              <td>IM 416</td>
+              <td>Manufacturing Technology</td>
+              <td class="num">3</td>
+            </tr>
+            <tr>
+              <td>IM 417</td>
+              <td>Total Quality Management</td>
+              <td class="num">3</td>
+            </tr>
+            <tr>
+              <td>IM 323B</td>
+              <td>Technology Research 2</td>
+              <td class="num">2</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">Total units / hours</td>
+              <td class="num">14</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <p class="section-label">Weekly time grid</p>
+        <div class="schedule-scroll">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Tuesday</th>
+                <th>Thursday</th>
+                <th>Saturday</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="time-col">7:30 &ndash; 9:00</td>
+                <td class="empty-cell">&mdash;</td>
+                <td class="empty-cell">&mdash;</td>
+                <td class="sched-cell"><span class="sched-code">IM 416</span><span class="sched-instructor">Mr. Jussayan</span></td>
+              </tr>
+              <tr>
+                <td class="time-col">9:00 &ndash; 10:30</td>
+                <td class="empty-cell">&mdash;</td>
+                <td class="empty-cell">&mdash;</td>
+                <td class="sched-cell"><span class="sched-code">IM 416</span><span class="sched-instructor">Mr. Jussayan</span></td>
+              </tr>
+              <tr>
+                <td class="time-col">10:30 &ndash; 12:00</td>
+                <td class="empty-cell">&mdash;</td>
+                <td class="sched-cell"><span class="sched-code">IM 323B</span><span class="sched-instructor">Mr. Canonoyan</span></td>
+                <td class="sched-cell"><span class="sched-code">IM 417</span><span class="sched-instructor">Mr. Pieper</span></td>
+              </tr>
+              <tr class="lunch-row">
+                <td class="time-col">12:00 &ndash; 12:30</td>
+                <td colspan="3">Lunch break</td>
+              </tr>
+              <tr>
+                <td class="time-col">12:30 &ndash; 2:00</td>
+                <td class="empty-cell">&mdash;</td>
+                <td class="empty-cell">&mdash;</td>
+                <td class="sched-cell"><span class="sched-code">IM 417</span><span class="sched-instructor">Mr. Pieper</span></td>
+              </tr>
+              <tr>
+                <td class="time-col">2:00 &ndash; 3:30</td>
+                <td class="empty-cell">&mdash;</td>
+                <td class="sched-cell"><span class="sched-code">IM 414</span><span class="sched-instructor">Mrs. Lazarte</span></td>
+                <td class="sched-cell"><span class="sched-code">IM 415</span><span class="sched-instructor">Dr. Mangubat</span></td>
+              </tr>
+              <tr>
+                <td class="time-col">3:30 &ndash; 5:00</td>
+                <td class="empty-cell">&mdash;</td>
+                <td class="sched-cell"><span class="sched-code">IM 414</span><span class="sched-instructor">Mrs. Lazarte</span></td>
+                <td class="sched-cell"><span class="sched-code">IM 415</span><span class="sched-instructor">Dr. Mangubat</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 

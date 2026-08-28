@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("login-btn").addEventListener("click", () => showScreen("clearance"));
   document.getElementById("enroll-btn").addEventListener("click", () => showScreen("enrollment"));
+  document.getElementById("view-schedule-btn").addEventListener("click", () => showScreen("schedule"));
 
   document.querySelectorAll("[data-back]").forEach((btn) => {
     btn.addEventListener("click", () => showScreen(btn.dataset.back));
