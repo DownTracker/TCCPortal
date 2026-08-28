@@ -32,6 +32,18 @@ body {
   padding: 2rem 1rem;
 }
 
+.screen {
+  display: none;
+  width: 100%;
+}
+
+.screen.active {
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- AUTH CARD ---------- */
+
 .card {
   width: 100%;
   max-width: 920px;
@@ -42,8 +54,6 @@ body {
   background: #FFFFFF;
   box-shadow: 0 20px 60px rgba(7, 58, 88, 0.18);
 }
-
-/* ---------- BRAND PANEL ---------- */
 
 .brand-panel {
   position: relative;
@@ -73,21 +83,18 @@ body {
   width: 108px;
   height: 108px;
   border-radius: 9999px;
+  overflow: hidden;
   border: 3px solid var(--gold);
-  background: rgba(255, 255, 255, 0.08);
+  background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.seal-inner {
-  width: 84px;
-  height: 84px;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.95);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.seal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .eyebrow {
@@ -132,8 +139,6 @@ body {
   color: rgba(255, 255, 255, 0.75);
 }
 
-/* ---------- FORM PANEL ---------- */
-
 .form-panel {
   flex: 1 1 54%;
   min-width: 300px;
@@ -141,14 +146,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.screen {
-  display: none;
-}
-
-.screen.active {
-  display: block;
 }
 
 .eyebrow-row {
@@ -234,7 +231,8 @@ body {
   margin-bottom: 1rem;
 }
 
-.field input {
+.field input,
+.field select {
   width: 100%;
   border: none;
   outline: none;
@@ -273,6 +271,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   font-family: var(--font-sans);
+  margin-top: 0.5rem;
 }
 
 .btn-blue {
@@ -292,40 +291,6 @@ body {
   color: var(--muted);
 }
 
-.steps-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 1.5rem;
-}
-
-.step-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.step-num {
-  flex-shrink: 0;
-  width: 26px;
-  height: 26px;
-  border-radius: 999px;
-  background: #FFF4E4;
-  color: var(--gold-dark);
-  font-size: 12px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.step-text {
-  margin: 0;
-  padding-top: 2px;
-  font-size: 14px;
-  color: var(--ink);
-}
-
 .back-btn {
   display: flex;
   align-items: center;
@@ -340,43 +305,170 @@ body {
   font-family: var(--font-sans);
 }
 
-.upload-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 8px;
-  border: 1.5px dashed var(--line);
-  border-radius: 12px;
-  padding: 2.5rem 1.5rem;
-  background: var(--paper);
+/* ---------- FORM GRID (new student + clearance info) ---------- */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+  margin-bottom: 0.5rem;
 }
 
-.upload-title {
+.form-field {
+  min-width: 0;
+}
+
+.form-field.span-2 {
+  grid-column: span 2;
+}
+
+/* ---------- DOCUMENT-STYLE SCREENS (enrollment steps / clearance) ---------- */
+
+.doc-card {
+  width: 100%;
+  max-width: 640px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(7, 58, 88, 0.18);
+  padding: 2.5rem 2.5rem 3rem;
+}
+
+.doc-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 0.5rem;
+}
+
+.doc-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  flex-shrink: 0;
+}
+
+.doc-eyebrow {
+  margin: 0 0 2px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--blue);
+}
+
+/* ---------- ENROLLMENT STEPPER ---------- */
+
+.stepper {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.stepper-item {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  padding-bottom: 1.75rem;
+}
+
+.stepper-item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  bottom: 0;
+  width: 1px;
+  background: var(--line);
+}
+
+.stepper-marker {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.stepper-item.current .stepper-marker {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #FFFFFF;
+}
+
+.stepper-title {
   margin: 0;
   font-size: 14px;
   font-weight: 500;
   color: var(--ink);
+  padding-top: 4px;
 }
 
-.upload-sub {
-  margin: 0;
+.stepper-office {
+  margin: 2px 0 0;
   font-size: 12px;
   color: var(--muted);
 }
 
-.next-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.stepper-item.current .stepper-office {
+  color: var(--blue);
+  font-weight: 500;
+}
+
+/* ---------- CLEARANCE ---------- */
+
+.clearance-info {
   margin-top: 1.5rem;
 }
 
-.next-text {
-  margin: 0;
+.signatures-divider {
+  margin: 1.5rem 0 1rem;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 1.25rem;
+}
+
+.signatures-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem 24px;
+  margin-bottom: 2rem;
+}
+
+.sig-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.sig-label {
   font-size: 12px;
   color: var(--subtext);
+  margin-bottom: 4px;
+}
+
+.sig-line {
+  height: 1px;
+  background: var(--line);
+  margin-top: 22px;
+}
+
+.clearance-submit {
+  max-width: 260px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 700px) {
@@ -386,5 +478,17 @@ body {
   }
   .form-panel {
     padding: 2.5rem 1.75rem;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-field.span-2 {
+    grid-column: span 1;
+  }
+  .signatures-grid {
+    grid-template-columns: 1fr;
+  }
+  .doc-card {
+    padding: 2rem 1.5rem 2.5rem;
   }
 }

@@ -1,6 +1,7 @@
 function showScreen(id) {
   document.querySelectorAll(".screen").forEach((el) => el.classList.remove("active"));
   document.getElementById("screen-" + id).classList.add("active");
+  window.scrollTo(0, 0);
 }
 
 function showTab(tab) {
@@ -19,8 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => showTab(btn.dataset.tab));
   });
 
-  document.getElementById("login-btn").addEventListener("click", () => showScreen("dashboard"));
-  document.getElementById("enroll-btn").addEventListener("click", () => showScreen("register"));
+  document.getElementById("login-btn").addEventListener("click", () => showScreen("clearance"));
+  document.getElementById("enroll-btn").addEventListener("click", () => showScreen("enrollment"));
 
   document.querySelectorAll("[data-back]").forEach((btn) => {
     btn.addEventListener("click", () => showScreen(btn.dataset.back));
