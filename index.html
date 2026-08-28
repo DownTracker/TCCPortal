@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Talisay City College &ndash; Student Portal</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="page">
+    <div class="card">
+
+      <!-- LEFT BRAND PANEL -->
+      <div class="brand-panel">
+        <svg class="brand-watermark" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="0.5">
+          <path d="M12 2c1.5 2 3 4 3 7a3 3 0 0 1-6 0c0-1 .3-1.8.7-2.6C10.2 5 11 3.5 12 2z"/>
+          <path d="M9 15c0-2 1-3.5 3-3.5s3 1.5 3 3.5a3 3 0 0 1-6 0z"/>
+          <path d="M8 22h8"/>
+          <path d="M12 18.5V22"/>
+        </svg>
+
+        <div class="brand-top">
+          <div class="seal">
+            <div class="seal-inner">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2c1.5 2 3 4 3 7a3 3 0 0 1-6 0c0-1 .3-1.8.7-2.6C10.2 5 11 3.5 12 2z" fill="#F0A63B" fill-opacity="0.9"/>
+                <rect x="10.5" y="9" width="3" height="11" rx="1" fill="#F0A63B" fill-opacity="0.9"/>
+              </svg>
+            </div>
+          </div>
+          <p class="eyebrow">Est. 2004 &middot; City of Talisay, Cebu</p>
+          <h1 class="brand-title">Talisay City<br />College</h1>
+          <p class="brand-motto">&ldquo;Todo Se Pasa, Solo Dios Basta&rdquo;</p>
+        </div>
+
+        <div class="brand-bottom">
+          <div class="brand-divider"></div>
+          <p class="brand-footer-text">Enrollment and Class Scheduling Portal</p>
+        </div>
+      </div>
+
+      <!-- RIGHT PANEL -->
+      <div class="form-panel">
+
+        <!-- AUTH SCREEN -->
+        <section id="screen-auth" class="screen">
+          <div class="eyebrow-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E9BD7" stroke-width="2"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+            <span class="eyebrow-label">Student portal</span>
+          </div>
+
+          <div class="segmented">
+            <button class="seg-btn active" data-tab="continuing">Continuing Student</button>
+            <button class="seg-btn" data-tab="new">New Student</button>
+          </div>
+
+          <!-- CONTINUING PANEL -->
+          <div id="panel-continuing" class="tab-panel active">
+            <h2 class="heading">Welcome back</h2>
+            <p class="subtext">Sign in with your student ID to continue your enrollment.</p>
+
+            <label class="field-label">Student ID number</label>
+            <div class="field">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E9BD7" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+              <input type="text" placeholder="2024-00123" />
+            </div>
+
+            <label class="field-label">Password</label>
+            <div class="field">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E9BD7" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+              <input type="password" placeholder="••••••••" />
+            </div>
+
+            <div class="forgot-row">
+              <button class="link-btn">Forgot password?</button>
+            </div>
+
+            <button id="login-btn" class="btn btn-blue">
+              Log in
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+            </button>
+
+            <p class="hint-text">First time logging in? Your Student ID is your default password.</p>
+          </div>
+
+          <!-- NEW STUDENT PANEL -->
+          <div id="panel-new" class="tab-panel">
+            <h2 class="heading">Start your application</h2>
+            <p class="subtext">New to Talisay City College? Here&rsquo;s what to expect before you begin.</p>
+
+            <div class="steps-list">
+              <div class="step-row">
+                <div class="step-num">1</div>
+                <p class="step-text">Fill out your basic profile information</p>
+              </div>
+              <div class="step-row">
+                <div class="step-num">2</div>
+                <p class="step-text">Upload required documents (photo, birth certificate, report card)</p>
+              </div>
+              <div class="step-row">
+                <div class="step-num">3</div>
+                <p class="step-text">Wait for verification before proceeding to admission</p>
+              </div>
+            </div>
+
+            <button id="enroll-btn" class="btn btn-gold">
+              Enroll as new student
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A2E06" stroke-width="2"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+            </button>
+
+            <p class="hint-text">Already have a student ID? Switch to Continuing Student above.</p>
+          </div>
+        </section>
+
+        <!-- REGISTRATION STUB SCREEN -->
+        <section id="screen-register" class="screen">
+          <button class="back-btn" data-back="auth">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1E9BD7" stroke-width="2"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg>
+            Back to login
+          </button>
+
+          <div class="eyebrow-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E9BD7" stroke-width="2"><path d="M9 4h6v3H9z"/><rect x="5" y="6" width="14" height="15" rx="1"/><path d="M9 12h6"/><path d="M9 16h6"/></svg>
+            <span class="eyebrow-label">New student registration</span>
+          </div>
+
+          <h2 class="heading">Profile and documents</h2>
+          <p class="subtext">This is where the registration form and document upload will live. Layout for this page comes next.</p>
+
+          <div class="upload-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1E9BD7" stroke-width="1.5"><path d="M7 18a4 4 0 0 1-1-7.9A5 5 0 0 1 16 8a4.5 4.5 0 0 1 1 8.9"/><path d="M12 12v6"/><path d="M9.5 14.5 12 12l2.5 2.5"/></svg>
+            <p class="upload-title">Document upload area</p>
+            <p class="upload-sub">Photo, birth certificate, report card, and other requirements</p>
+          </div>
+
+          <div class="next-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B97A1E" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <p class="next-text">Next: Step 1 &ndash; Verification</p>
+          </div>
+        </section>
+
+        <!-- DASHBOARD STUB SCREEN -->
+        <section id="screen-dashboard" class="screen">
+          <button class="back-btn" data-back="auth">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1E9BD7" stroke-width="2"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg>
+            Back to login
+          </button>
+          <h2 class="heading">Signed in</h2>
+          <p class="subtext">This is where the student dashboard and enrollment steps tracker will go next.</p>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
